@@ -15,6 +15,7 @@ public class FilaVacia extends RuntimeException {
      * Creates a new instance of <code>FilaVacia</code> without detail message.
      */
     public FilaVacia() {
+        
     }
 
     public FilaVacia(String msg) {
