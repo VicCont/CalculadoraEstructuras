@@ -7,6 +7,7 @@ package algoritmocalculadora;
  */
 
 import algoritmocalculadora.Parseadorapos;
+import java.math.BigDecimal;
 
 /**
  *
@@ -18,7 +19,13 @@ public class Estructuras {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Parseadorapos.evaluar("-55.5*2");
+        try {
+            BigDecimal bd=Parseadorapos.evaluar("4444^44");
+            System.out.println(bd);
+            System.out.println(bd.unscaledValue());
+        } catch (NumberFormatException e) {
+            System.out.println("Tienes una operación invalida");
+        }
     }
     
 }

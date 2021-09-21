@@ -1,5 +1,7 @@
 package algoritmocalculadora;
 
+import java.util.Arrays;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -36,11 +38,16 @@ public class PilaU <T> implements Pila<T>{
         pendientes[++tope]=(T) objeto;
     }
 
+    public int size(){
+        return tope;
+    }
+    
     public T pop() {
         if (tope==-1) {
             throw new FilaVacia("");
         }
-        return (T) pendientes[tope--];
+        tope--;
+        return (T) pendientes[tope+1];
     }
 
 
@@ -54,5 +61,15 @@ public class PilaU <T> implements Pila<T>{
         }
         return (T) pendientes[tope];
     }
+
+    @Override
+    public String toString() {
+        String retorno="";
+        for (int i = 0; i <=tope; i++) {
+            retorno+=pendientes[i]+",";
+        }
+        return retorno;
+    }
+    
     
 }
