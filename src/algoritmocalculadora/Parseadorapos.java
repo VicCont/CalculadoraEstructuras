@@ -109,14 +109,14 @@ public class Parseadorapos  {
     
     private static BigDecimal calcula(BigDecimal num1, BigDecimal num2,char oper){
         if (oper=='+')
-            return num1.add(num2,MathContext.UNLIMITED);
+            return num1.add(num2,MathContext.DECIMAL128);
         else if (oper=='*')
-            return num1.multiply(num2,MathContext.UNLIMITED);
+            return num1.multiply(num2,MathContext.DECIMAL128);
         else if (oper=='/'){
             if  (num2.equals(BigDecimal.ZERO)){
                 return new BigDecimal(Double.NaN);    
             }
-            return num1.divide(num2,MathContext.UNLIMITED);
+            return num1.divide(num2,22,RoundingMode.HALF_EVEN);
         }
         else if (oper=='-')
             return num1.subtract(num2,MathContext.UNLIMITED);

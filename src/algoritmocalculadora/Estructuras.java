@@ -20,9 +20,9 @@ public class Estructuras {
      */
     public static void main(String[] args) {
         try {
-            BigDecimal bd=Parseadorapos.evaluar("4444^44");
+            BigDecimal bd=Parseadorapos.evaluar("3*2/3");
             System.out.println(bd);
-            System.out.println(bd.unscaledValue());
+            System.out.println(bd.toEngineeringString());
         } catch (NumberFormatException e) {
             System.out.println("Tienes una operación invalida");
         }
